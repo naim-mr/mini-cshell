@@ -1,6 +1,6 @@
 # mini-cshell
-Mini shell avec les primitives systèemes unix . 
-Les commandes classiques fonctionnes : cat, ls , les pipes , les redirections de flux , etc... 
+Mini shell avec les primitives systèmes unix . 
+Les commandes classiques fonctionnent : cat, ls , les pipes , les redirections de flux , etc... 
 
 **TODO**
 
