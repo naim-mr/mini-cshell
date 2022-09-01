@@ -16,7 +16,7 @@ int len_ptr ( char* s[]){
 }
 
 
-void affiche_cmd(char* argv[]){
+void display_cmd(char* argv[]){
 	int i=0;
   	while(argv[i]){
     if(argv[i+1]==NULL){
@@ -376,13 +376,13 @@ int parse_line_pipes(char* s,char**** argv,char** in,char** out){
 
 
 
-void affiche_cmd_piped(char *** argv){
+void display_cmd_piped(char *** argv){
   int i=0;
   printf("{");
   while(argv[i]){
     printf("[");
     
-    affiche_cmd(argv[i]);
+    display_cmd(argv[i]);
     printf("]");
     i++;
   }
@@ -429,7 +429,7 @@ void redir_cmd_1(char** argv, char*in, char* out){
     }
     temp[k]=0;
     dup2(fdin,STDIN_FILENO);
-    affiche_cmd(temp);
+    display_cmd(temp);
     printf("\n");
     simple_cmd(temp);
     close(fdin);

@@ -2,10 +2,6 @@
 #include <stdbool.h>
 #include <signal.h>
 
-/* Le shell fonctionne normalement bien pour toutes les fonctionnalités sauf 
-bg  pose problème.
-Pour fg le procesuss est bien réveillé au vu de htop et on l'a au premier plan.
-Par cotnre pour bg c'est totalement aléatoire avec le code que j'ai fait */
 
 static void handler(int sig){
       
@@ -24,7 +20,7 @@ static void handler(int sig){
 
     }
 static void sigttin_hand(int sig){
-    printf("%d\n",getpid());
+    //printf("%d\n",getpid());
     kill(getpid(),SIGSTOP);
 }
 
@@ -59,7 +55,7 @@ int main(int argc , char** argv){
  
   if(getenv("pid_father")==NULL){
      int fd=open("pid_list",O_CREAT|O_TRUNC,0644);
-     printf("%d\n",fd);
+     //printf("%d\n",fd);
      close(fd);
 
   }
@@ -109,7 +105,7 @@ int main(int argc , char** argv){
       if(( out=(char*)malloc(100))==NULL)error("malloc failed",EXIT_FAILURE);
       
       getcwd(dir,124);
-      printf("%s$:\n ",dir);
+      printf(" \x1B[32m%s$:\x1B[0m\n ",dir);
       line[nb-1]=0;
       scan_and_replace('>',&line);
       scan_and_replace('<',&line);

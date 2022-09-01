@@ -20,14 +20,14 @@
 
 
 void simple_cmd(char** argv);
-void affiche_cmd(char* argv[]);
+void display_cmd(char* argv[]);
 int parse_line_redir(char* s,char** argv[],char** in,char** out);
 int parse_line(char* s,char*** argv);
 void free_argv(char** argv[]);
 void exec_bash(int fdesc);
 void redir_cmd_1(char** argv, char*in, char* out);
 void redir_cmd(char *** argv, char* in,char* out);
-void affiche_cmd_piped(char *** argv);
+void display_cmd_piped(char *** argv);
 int parse_line_pipes(char* s,char*** argv[],char** in,char** out);
 void free_argv_2(char **** argv);
 
