@@ -1,0 +1,12 @@
+
+.PHONY: 
+ 
+default:
+shell.o: 
+main.o: 
+ 
+%.o:
+
+$(EXEC):
+clean:
+	
